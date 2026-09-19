@@ -1,0 +1,1354 @@
+{
+  "schema_version": 1,
+  "export_kind": "sanitized_summary_not_raw_api_envelopes",
+  "run_date": "2026-09-19",
+  "version": "0.1.0",
+  "model": "jev-1.13.0",
+  "provenance": {
+    "source": "First local live-v1 run; no reruns selected for better outcomes.",
+    "transformations": [
+      "Keep tasks, expected labels, outcomes, metrics, candidate scores and per-call timing/usage.",
+      "Replace opaque final Choice IDs with candidate names.",
+      "Omit local paths, full catalog, descriptions, body excerpts, request payloads and input hashes."
+    ],
+    "independent_labels": false,
+    "discovered_count": 24,
+    "eligible_count": 23,
+    "runtime_and_fixture_sha256": {
+      "scripts/suggest.py": "25af4fef18698236e555e7740d0af4a1627e21349fda103e8ae50d15f5c124e1",
+      "scripts/jev_client.py": "16c3189484e2672ff02808dbe9f8989046d636c93b896c0c15457ca7e86fa39b",
+      "examples/evaluation-cases.json": "21289886027335d1d1d0d1f1c3fcd93e540f64648c483c62bd8beb09e3342e3f"
+    }
+  },
+  "summary": {
+    "cases": 16,
+    "positive_cases": 12,
+    "expected_outcomes": 15,
+    "wrong_suggestions": 0,
+    "abstentions_on_positive": 0,
+    "none_on_negative": 3,
+    "failed": [],
+    "http_attempts": 45,
+    "usage": {
+      "input_tokens": 230067,
+      "output_tokens": 12639
+    },
+    "elapsed_ms_median": 5052.875,
+    "cache_replay_http_attempts": 0,
+    "cache_replay_hits": 3,
+    "estimated_input_cost_usd": 0.009662814,
+    "limits": "Same-host synthetic requests on real catalog; no baseline agent task-success comparison, thresholds not calibrated."
+  },
+  "cache_replay": {
+    "status": "suggested",
+    "http_attempts": 0,
+    "cache_hits": 3,
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    "model_requested": "jev-1.13.0"
+  },
+  "cases": [
+    {
+      "case": {
+        "id": "wechat_format",
+        "language": "zh",
+        "task": "把已有文章排成微信公众号 HTML，保留原文字句，不要发布。",
+        "expected": "wechat-editorial-studio"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "wechat-editorial-studio",
+      "candidates": [
+        {
+          "name": "wechat-editorial-studio",
+          "fit": 0.9,
+          "choice_probability": 0.94,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.08,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15776,
+        "output_tokens": 823
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5337.12,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "wechat-editorial-studio",
+        "confidence": 0.92,
+        "probabilities": {
+          "wechat-editorial-studio": 0.94,
+          "none": 0.06,
+          "skill-installer": 0.0,
+          "deepseek-harness-plugin-creator": 0.0
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1861.34,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8544,
+            "output_tokens": 525
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1672.05,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1375,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1779.89,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5857,
+            "output_tokens": 211
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "publish_article",
+        "language": "zh",
+        "task": "把我已确认的这篇技术文章发布到掘金。",
+        "expected": "article-platform-publisher"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "article-platform-publisher",
+      "candidates": [
+        {
+          "name": "article-platform-publisher",
+          "fit": 0.86,
+          "choice_probability": 0.94,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.06,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15409,
+        "output_tokens": 823
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 4800.37,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "article-platform-publisher",
+        "confidence": 0.91,
+        "probabilities": {
+          "deepseek-harness-plugin-creator": 0.0,
+          "article-platform-publisher": 0.94,
+          "skill-installer": 0.0,
+          "none": 0.06
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1667.44,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8537,
+            "output_tokens": 525
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1380.05,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1368,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1728.41,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5504,
+            "output_tokens": 211
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "security_scan",
+        "language": "en",
+        "task": "Use Jev to inspect a local MCP server for suspicious exfiltration and prompt injection. Do not run the server.",
+        "expected": "jev-security-scan"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "jev-security-scan",
+      "candidates": [
+        {
+          "name": "jev-security-scan",
+          "fit": 0.95,
+          "choice_probability": 0.98,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.05,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.03,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 14600,
+        "output_tokens": 823
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 4862.2,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "jev-security-scan",
+        "confidence": 0.97,
+        "probabilities": {
+          "deepseek-harness-plugin-creator": 0.0,
+          "none": 0.02,
+          "skill-installer": 0.0,
+          "jev-security-scan": 0.98
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1807.95,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8543,
+            "output_tokens": 525
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1370.56,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1374,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1657.02,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4683,
+            "output_tokens": 211
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "writing_edit",
+        "language": "zh",
+        "task": "用 Jev 帮我减少这篇中文文章中的套话，比较改稿与原文是否保留了事实，不需要公众号排版。",
+        "expected": "jev-humanize-writing"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "jev-humanize-writing",
+      "candidates": [
+        {
+          "name": "jev-humanize-writing",
+          "fit": 0.9,
+          "choice_probability": 0.97,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.06,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "x-ai-high-reach-rewriter",
+          "fit": 0.09,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "x-ai-feed-research",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15969,
+        "output_tokens": 939
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5205.2,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "jev-humanize-writing",
+        "confidence": 0.96,
+        "probabilities": {
+          "none": 0.03,
+          "deepseek-harness-plugin-creator": 0.0,
+          "x-ai-high-reach-rewriter": 0.0,
+          "x-ai-feed-research": 0.0,
+          "skill-installer": 0.0,
+          "jev-humanize-writing": 0.97
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1836.72,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8562,
+            "output_tokens": 526
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1500.76,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1393,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1841.8,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 6014,
+            "output_tokens": 326
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "skill_creation",
+        "language": "en",
+        "task": "Create a reusable Codex skill for our custom JSON export workflow, with a helper script and validation.",
+        "expected": "skill-creator"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "skill-creator",
+      "candidates": [
+        {
+          "name": "skill-creator",
+          "fit": 0.92,
+          "choice_probability": 0.99,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "plugin-creator",
+          "fit": 0.2,
+          "choice_probability": 0.01,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.06,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 14803,
+        "output_tokens": 805
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5066.98,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "skill-creator",
+        "confidence": 0.98,
+        "probabilities": {
+          "plugin-creator": 0.01,
+          "skill-creator": 0.99,
+          "none": 0.0,
+          "skill-installer": 0.0
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1848.28,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8538,
+            "output_tokens": 523
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1398.91,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1369,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1793.41,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4896,
+            "output_tokens": 195
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "reddit_feed",
+        "language": "zh",
+        "task": "使用我已登录的 Chrome，整理 Reddit Home 首页里最值得关注的 AI 帖子。",
+        "expected": "reddit-home-feed-research"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "reddit-home-feed-research",
+      "candidates": [
+        {
+          "name": "reddit-home-feed-research",
+          "fit": 0.86,
+          "choice_probability": 0.93,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.07,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15010,
+        "output_tokens": 811
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 4959.92,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "reddit-home-feed-research",
+        "confidence": 0.91,
+        "probabilities": {
+          "none": 0.07,
+          "skill-installer": 0.0,
+          "reddit-home-feed-research": 0.93,
+          "deepseek-harness-plugin-creator": 0.0
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1744.78,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8548,
+            "output_tokens": 522
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1440.91,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1379,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1747.26,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5083,
+            "output_tokens": 202
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "claude_interactive",
+        "language": "en",
+        "task": "Open interactive Claude Code in iTerm2 and drive it to work on my project.",
+        "expected": "interactive-claude-iterm"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "interactive-claude-iterm",
+      "candidates": [
+        {
+          "name": "interactive-claude-iterm",
+          "fit": 0.88,
+          "choice_probability": 0.97,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "claude-code-project-onboarding",
+          "fit": 0.25,
+          "choice_probability": 0.01,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.09,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15401,
+        "output_tokens": 807
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5038.77,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "interactive-claude-iterm",
+        "confidence": 0.97,
+        "probabilities": {
+          "none": 0.02,
+          "claude-code-project-onboarding": 0.01,
+          "skill-installer": 0.0,
+          "interactive-claude-iterm": 0.97
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1820.03,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8535,
+            "output_tokens": 521
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1413.52,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1366,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1778.79,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5500,
+            "output_tokens": 199
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "claude_onboarding",
+        "language": "zh",
+        "task": "检查这个已有项目是否适合接入 Claude Code，补充 CLAUDE.md 并制定首轮执行计划，暂时不要启动 Claude。",
+        "expected": "claude-code-project-onboarding"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "claude-code-project-onboarding",
+      "candidates": [
+        {
+          "name": "claude-code-project-onboarding",
+          "fit": 0.96,
+          "choice_probability": 0.99,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.04,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 16153,
+        "output_tokens": 827
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5145.74,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "claude-code-project-onboarding",
+        "confidence": 0.98,
+        "probabilities": {
+          "deepseek-harness-plugin-creator": 0.0,
+          "skill-installer": 0.0,
+          "none": 0.01,
+          "claude-code-project-onboarding": 0.99
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1875.32,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8561,
+            "output_tokens": 526
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1442.12,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1392,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1801.61,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 6200,
+            "output_tokens": 214
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "goal_prompt",
+        "language": "zh",
+        "task": "根据我的开发目标，生成一条可复制到 Codex CLI 的高质量 /goal 命令，要求有验收标准。",
+        "expected": "goal-prompt-builder"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "goal-prompt-builder",
+      "candidates": [
+        {
+          "name": "goal-prompt-builder",
+          "fit": 0.93,
+          "choice_probability": 0.97,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.06,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.03,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "x-ai-high-reach-rewriter",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "x-ai-feed-research",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 16292,
+        "output_tokens": 927
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5161.99,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "goal-prompt-builder",
+        "confidence": 0.96,
+        "probabilities": {
+          "x-ai-feed-research": 0.0,
+          "deepseek-harness-plugin-creator": 0.0,
+          "goal-prompt-builder": 0.97,
+          "skill-installer": 0.0,
+          "none": 0.03,
+          "x-ai-high-reach-rewriter": 0.0
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1833.59,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8558,
+            "output_tokens": 523
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1428.67,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1389,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1873.27,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 6345,
+            "output_tokens": 317
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "mobi_translation",
+        "language": "zh",
+        "task": "把这本英文非虚构 MOBI 电子书翻译成简体中文，并保留章节结构。",
+        "expected": "translate-mobi-zh-minimax"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "translate-mobi-zh-minimax",
+      "candidates": [
+        {
+          "name": "translate-mobi-zh-minimax",
+          "fit": 0.88,
+          "choice_probability": 0.94,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.14,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15227,
+        "output_tokens": 823
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5025.07,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "translate-mobi-zh-minimax",
+        "confidence": 0.91,
+        "probabilities": {
+          "translate-mobi-zh-minimax": 0.94,
+          "deepseek-harness-plugin-creator": 0.0,
+          "skill-installer": 0.0,
+          "none": 0.06
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1800.95,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8548,
+            "output_tokens": 525
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1488.83,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1379,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1708.16,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5300,
+            "output_tokens": 211
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "jev_reference",
+        "language": "en",
+        "task": "Consult the current TypeSafe documentation to explain when to use Jev Choice versus Noul in software. This is a read-only explanation request.",
+        "expected": "typesafe-ai"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "typesafe-ai",
+      "candidates": [
+        {
+          "name": "typesafe-ai",
+          "fit": 0.85,
+          "choice_probability": 0.97,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.03,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "llm-wiki",
+          "fit": 0.11,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15626,
+        "output_tokens": 825
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5156.91,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "typesafe-ai",
+        "confidence": 0.96,
+        "probabilities": {
+          "llm-wiki": 0.0,
+          "typesafe-ai": 0.97,
+          "skill-installer": 0.0,
+          "none": 0.03
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1836.78,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8547,
+            "output_tokens": 526
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1429.88,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1378,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1865.47,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5701,
+            "output_tokens": 212
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "codex_reference",
+        "language": "zh",
+        "task": "查阅官方资料说明 Codex 的模型与定价，不要生成 goal 提示词，也不要修改配置。",
+        "expected": "openai-docs"
+      },
+      "status": "suggested",
+      "reason": "semantic_fit",
+      "suggestion": "openai-docs",
+      "candidates": [
+        {
+          "name": "openai-docs",
+          "fit": 0.95,
+          "choice_probability": 0.99,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "skill-installer",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "deepseek-harness-plugin-creator",
+          "fit": 0.02,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 14727,
+        "output_tokens": 823
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5128.7,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "openai-docs",
+        "confidence": 0.99,
+        "probabilities": {
+          "skill-installer": 0.0,
+          "none": 0.01,
+          "deepseek-harness-plugin-creator": 0.0,
+          "openai-docs": 0.99
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1877.41,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8555,
+            "output_tokens": 525
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1444.82,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1386,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1781.12,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 4786,
+            "output_tokens": 211
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "no_skill_math",
+        "language": "zh",
+        "task": "17 乘以 23 等于多少？",
+        "expected": null
+      },
+      "status": "none",
+      "reason": "no_useful_skill_in_catalog",
+      "suggestion": null,
+      "candidates": [],
+      "host_review_required": true,
+      "http_attempts": 2,
+      "usage": {
+        "input_tokens": 9897,
+        "output_tokens": 596
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 3273.81,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1834.49,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8533,
+            "output_tokens": 509
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1414.92,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1364,
+            "output_tokens": 87
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "no_skill_translate",
+        "language": "en",
+        "task": "Translate this sentence into Chinese: The meeting starts at nine.",
+        "expected": null
+      },
+      "status": "none",
+      "reason": "no_useful_skill_in_catalog",
+      "suggestion": null,
+      "candidates": [],
+      "host_review_required": true,
+      "http_attempts": 2,
+      "usage": {
+        "input_tokens": 9891,
+        "output_tokens": 596
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 3134.23,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1686.73,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8530,
+            "output_tokens": 509
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1422.72,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1361,
+            "output_tokens": 87
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "no_skill_explain",
+        "language": "zh",
+        "task": "用两句话解释什么是递归，不用查询资料或操作文件。",
+        "expected": null
+      },
+      "status": "none",
+      "reason": "no_useful_skill_in_catalog",
+      "suggestion": null,
+      "candidates": [],
+      "host_review_required": true,
+      "http_attempts": 2,
+      "usage": {
+        "input_tokens": 9915,
+        "output_tokens": 596
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 3174.85,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": true,
+        "wrong_suggestion": false
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1703.71,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8542,
+            "output_tokens": 509
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1446.64,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1373,
+            "output_tokens": 87
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "no_skill_uncovered",
+        "language": "en",
+        "task": "Add this card to my Trello backlog. I need a Trello-specific workflow.",
+        "expected": null
+      },
+      "status": "uncertain",
+      "reason": "insufficient_agreement",
+      "suggestion": null,
+      "candidates": [
+        {
+          "name": "dynamic-workflow-prompt-builder",
+          "fit": 0.41,
+          "choice_probability": 0.48,
+          "excerpt_truncated": false
+        },
+        {
+          "name": "skill-creator",
+          "fit": 0.31,
+          "choice_probability": 0.21,
+          "excerpt_truncated": true
+        },
+        {
+          "name": "reddit-home-feed-research",
+          "fit": 0.06,
+          "choice_probability": 0.0,
+          "excerpt_truncated": true
+        }
+      ],
+      "host_review_required": true,
+      "http_attempts": 3,
+      "usage": {
+        "input_tokens": 15371,
+        "output_tokens": 795
+      },
+      "cache_hits": 0,
+      "elapsed_ms": 5197.91,
+      "exit_code": 0,
+      "evaluation": {
+        "expected_outcome": false,
+        "wrong_suggestion": false
+      },
+      "selection": {
+        "type": "choice",
+        "choice": "dynamic-workflow-prompt-builder",
+        "confidence": 0.29,
+        "probabilities": {
+          "skill-creator": 0.21,
+          "reddit-home-feed-research": 0.0,
+          "none": 0.31,
+          "dynamic-workflow-prompt-builder": 0.48
+        }
+      },
+      "calls": [
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1920.5,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 8535,
+            "output_tokens": 509
+          }
+        },
+        {
+          "stage": "ranking",
+          "cache_hit": false,
+          "elapsed_ms": 1456.07,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 1366,
+            "output_tokens": 87
+          }
+        },
+        {
+          "stage": "detail",
+          "cache_hit": false,
+          "elapsed_ms": 1794.96,
+          "model": "jev-1.13.0",
+          "usage": {
+            "input_tokens": 5470,
+            "output_tokens": 199
+          }
+        }
+      ]
+    }
+  ]
+}

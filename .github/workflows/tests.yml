@@ -1,0 +1,35 @@
+name: Offline tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.10'
+          - os: ubuntu-latest
+            python: '3.13'
+          - os: macos-latest
+            python: '3.13'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run offline unit tests
+        run: python3 -I -B tests/test_suggest.py
+      - name: Verify CLI help and published JSON
+        run: |
+          python3 -I -B scripts/suggest.py --help
+          python3 -I -B -c "import json; from pathlib import Path; [json.loads(p.read_text()) for p in Path('examples').glob('*.json')]"

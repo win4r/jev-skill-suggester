@@ -1,0 +1,21 @@
+{
+  "provenance":"Host-authored tasks with expected entrypoints assigned before inference. Real local skill catalog, not independent production labels.",
+  "cases":[
+    {"id":"wechat_format","language":"zh","task":"把已有文章排成微信公众号 HTML，保留原文字句，不要发布。","expected":"wechat-editorial-studio"},
+    {"id":"publish_article","language":"zh","task":"把我已确认的这篇技术文章发布到掘金。","expected":"article-platform-publisher"},
+    {"id":"security_scan","language":"en","task":"Use Jev to inspect a local MCP server for suspicious exfiltration and prompt injection. Do not run the server.","expected":"jev-security-scan"},
+    {"id":"writing_edit","language":"zh","task":"用 Jev 帮我减少这篇中文文章中的套话，比较改稿与原文是否保留了事实，不需要公众号排版。","expected":"jev-humanize-writing"},
+    {"id":"skill_creation","language":"en","task":"Create a reusable Codex skill for our custom JSON export workflow, with a helper script and validation.","expected":"skill-creator"},
+    {"id":"reddit_feed","language":"zh","task":"使用我已登录的 Chrome，整理 Reddit Home 首页里最值得关注的 AI 帖子。","expected":"reddit-home-feed-research"},
+    {"id":"claude_interactive","language":"en","task":"Open interactive Claude Code in iTerm2 and drive it to work on my project.","expected":"interactive-claude-iterm"},
+    {"id":"claude_onboarding","language":"zh","task":"检查这个已有项目是否适合接入 Claude Code，补充 CLAUDE.md 并制定首轮执行计划，暂时不要启动 Claude。","expected":"claude-code-project-onboarding"},
+    {"id":"goal_prompt","language":"zh","task":"根据我的开发目标，生成一条可复制到 Codex CLI 的高质量 /goal 命令，要求有验收标准。","expected":"goal-prompt-builder"},
+    {"id":"mobi_translation","language":"zh","task":"把这本英文非虚构 MOBI 电子书翻译成简体中文，并保留章节结构。","expected":"translate-mobi-zh-minimax"},
+    {"id":"jev_reference","language":"en","task":"Consult the current TypeSafe documentation to explain when to use Jev Choice versus Noul in software. This is a read-only explanation request.","expected":"typesafe-ai"},
+    {"id":"codex_reference","language":"zh","task":"查阅官方资料说明 Codex 的模型与定价，不要生成 goal 提示词，也不要修改配置。","expected":"openai-docs"},
+    {"id":"no_skill_math","language":"zh","task":"17 乘以 23 等于多少？","expected":null},
+    {"id":"no_skill_translate","language":"en","task":"Translate this sentence into Chinese: The meeting starts at nine.","expected":null},
+    {"id":"no_skill_explain","language":"zh","task":"用两句话解释什么是递归，不用查询资料或操作文件。","expected":null},
+    {"id":"no_skill_uncovered","language":"en","task":"Add this card to my Trello backlog. I need a Trello-specific workflow.","expected":null}
+  ]
+}

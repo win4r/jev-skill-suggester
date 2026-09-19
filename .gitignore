@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+results/
+reports/
+.cache/
+private-cache/
+graphify-out/
+*.zip

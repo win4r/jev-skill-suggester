@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jev Skill 建议器"
+  short_description: "用 Jev 为当前任务推荐已安装技能，支持无需技能、复核与可核对的判断记录"
+  default_prompt: "使用 $jev-skill-suggester 为当前任务推荐最合适的已安装 Skill，并说明是否需要进一步复核。"
